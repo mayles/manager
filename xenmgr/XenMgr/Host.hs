@@ -479,7 +479,7 @@ readHostInfo = do
                                                (x:_) -> strip x
 
 ----------------------------------------
--- xenclient installation progress/state
+-- OpenXT installation progress/state
 ----------------------------------------
 
 data InstallState = InstallState {
@@ -650,7 +650,7 @@ getGpusRightOf gpu_id =
     where right_of p (gpu,p') = p' > p
 
 getHostXcVersion :: Rpc XcVersion
-getHostXcVersion = XcVersion . version . dictFile <$> liftIO (readFile "/etc/xenclient.conf") where
+getHostXcVersion = XcVersion . version . dictFile <$> liftIO (readFile "/etc/issue") where
     version m = fromMaybe "" . M.lookup "version" $ m
 
 dictFile :: String -> M.Map String String

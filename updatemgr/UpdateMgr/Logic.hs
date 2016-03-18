@@ -56,7 +56,7 @@ releasesInfoPath :: FilePath
 releasesInfoPath = updateDirBase </> "releases"
 
 xenclientConf :: FilePath
-xenclientConf = "/etc/xenclient.conf"
+xenclientConf = "/etc/issue"
 
 repoCertConf :: FilePath
 repoCertConf = "/config/repo-cert.conf"

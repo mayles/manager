@@ -100,7 +100,7 @@ data BuildInfo = BuildInfo {
 
 readBuildInfo :: IO BuildInfo
 readBuildInfo =
-    parse <$> readFile "/etc/xenclient.conf"
+    parse <$> readFile "/etc/issue"
   where
     parse  = fromMap . toMap . lines
     toMap  = foldl' insert M.empty

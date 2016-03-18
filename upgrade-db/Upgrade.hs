@@ -138,7 +138,7 @@ buildUpgrade = do
   have_etc_conf  <- doesFileExist etc_path
   have_conf_conf <- doesFileExist config_path
   rehash <- doesFileExist rehash_path
-  when ( not have_etc_conf ) $ error "fatal error, /etc/xenclient.conf does not exist!"
+  when ( not have_etc_conf ) $ error "fatal error, /etc/issue does not exist!"
   if not have_conf_conf
      then do_it
      else do bi  <- readBuildInfo etc_path
@@ -148,8 +148,8 @@ buildUpgrade = do
                 else inform $ "build number has not changed"
   when rehash $ rehash_vms >> removeFile rehash_path
   where
-    etc_path = "/etc/xenclient.conf"
-    config_path = "/config/xenclient.conf"
+    etc_path = "/etc/issue"
+    config_path = "/config/issue"
     rehash_path = "/config/rehash-vms"
     do_it = do
       inform $ "build number has changed - performing appropriate actions"      
