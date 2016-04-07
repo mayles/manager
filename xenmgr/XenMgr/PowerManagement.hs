@@ -385,7 +385,7 @@ execute_ ActionSleep supervised = do
     info "PM: executing surfman pre-s3"
     liftRpc $ comCitrixXenclientSurfmanPreS3 "com.citrix.xenclient.surfman" "/"
     info "PM: executing s3 suspend script"
-    liftIO $ spawnShell "/usr/share/xenclient/enter-s3.sh"
+    liftIO $ spawnShell "/usr/share/openxt/enter-s3.sh"
     info "PM: resumed host from s3"
     info "PM: executing surfman post-s3"
     liftRpc $ comCitrixXenclientSurfmanPostS3 "com.citrix.xenclient.surfman" "/"

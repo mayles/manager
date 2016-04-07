@@ -496,9 +496,9 @@ getEULA = do
     let choose names
             = map fst . filter snd <$> mapM (\n -> liftIO (doesFileExist n) >>= return . (,) n) names
 
-    eulas <- choose [ "/usr/share/xenclient/EULA-" ++ lang
-                    , "/usr/share/xenclient/EULA-en-us"
-                    , "/usr/share/xenclient/EULA" ]
+    eulas <- choose [ "/usr/share/openxt/EULA-" ++ lang
+                    , "/usr/share/openxt/EULA-en-us"
+                    , "/usr/share/openxt/EULA" ]
     case eulas of
       []       -> return ""
       (eula:_) -> do

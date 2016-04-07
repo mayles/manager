@@ -280,7 +280,7 @@ monitorVms :: XM ()
 monitorVms = mapM_ monitorAndReactVm =<< liftRpc getVms
 
 completeBootScript :: String
-completeBootScript = "/usr/share/xenclient/complete-boot.sh"
+completeBootScript = "/usr/share/openxt/complete-boot.sh"
 
 data Flag = NoDaemonize
           | NoAutostart

@@ -368,7 +368,7 @@ dictFileStr :: [(String,String)] -> String
 dictFileStr = unlines . map mkline where mkline (k,v) = k ++ "=" ++ v
 
 drmScript :: [String] -> IO String
-drmScript opts = readProcessOrDie "/usr/share/xenclient/drm_graphics_option.sh" opts ""
+drmScript opts = readProcessOrDie "/usr/share/openxt/drm_graphics_option.sh" opts ""
 
 appGetDrmGraphics :: Rpc Bool
 appGetDrmGraphics = liftIO $ do
